@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class CollectionsToolkit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a sentence:");
+        String input = sc.nextLine().toLowerCase();
+
+        String[] words = input.split("\\s+");
+        Map<String, Integer> freqMap = new HashMap<>();
+
+        for (String word : words) {
+            freqMap.put(word, freqMap.getOrDefault(word, 0) + 1);
+        }
+
+        System.out.println("\nWord Frequency:");
+        for (String word : freqMap.keySet()) {
+            System.out.println(word + ": " + freqMap.get(word));
+        }
+    }
+}
